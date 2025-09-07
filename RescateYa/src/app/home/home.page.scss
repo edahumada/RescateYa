@@ -1,0 +1,18 @@
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.emergency-container {
+  text-align: center;
+}
+
+.emergency-text {
+  margin-top: 1rem;
+  color: #ff4f00;
+  font-weight: bold;
+}

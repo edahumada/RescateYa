@@ -1,7 +1,0 @@
-{
-  "name": "RescateYa",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular-standalone"
-}

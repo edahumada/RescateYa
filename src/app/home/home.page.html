@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Rescate Ya</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="home-container">
+    <h2 class="title">Emergencia</h2>
+    <p class="subtitle">Presiona el botón si necesitas ayuda.</p>
+
+    <ion-button class="emergency-btn" expand="block" (click)="sendEmergency()">
+      Solicitar Ayuda
+    </ion-button>
+  </div>
+</ion-content>

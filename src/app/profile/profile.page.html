@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="form-container">
+    <h2>Datos del Usuario</h2>
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input [(ngModel)]="user.phone" type="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Datos Médicos</ion-label>
+      <ion-input [(ngModel)]="user.medicalData"></ion-input>
+    </ion-item>
+
+    <h2>Contactos de Emergencia</h2>
+
+    <div *ngFor="let contact of emergencyContacts; let i = index">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="contact.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input [(ngModel)]="contact.phone" type="tel"></ion-input>
+      </ion-item>
+
+      <ion-button color="danger" expand="block" (click)="removeContact(i)">
+        Eliminar contacto
+      </ion-button>
+    </div>
+
+    <ion-button expand="block" (click)="addContact()">
+      Agregar contacto
+    </ion-button>
+
+    <ion-button expand="block" color="primary" (click)="saveProfile()">
+      Guardar perfil
+    </ion-button>
+
+    <ion-button expand="block" color="medium" (click)="logout()">
+      Cerrar sesión
+    </ion-button>
+  </div>
+</ion-content>

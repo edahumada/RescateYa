@@ -1,0 +1,39 @@
+ion-content {
+  --background: linear-gradient(180deg, #f5f7fa, #e6ebf0);
+  padding: 20px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #333333;
+}
+
+.emergency-btn {
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: 60px;
+  width: 90%;
+  max-width: 400px;
+  --background: #d32f2f;
+  --background-activated: #b71c1c;
+  --border-radius: 50px;
+  color: white;
+  box-shadow: 0 6px 14px rgba(211, 47, 47, 0.4);
+  letter-spacing: 1px;
+}

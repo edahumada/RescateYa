@@ -1,0 +1,58 @@
+.menu-header {
+  --background: #d32f2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.menu-content {
+  --background: #fff5f5;
+  padding-top: 10px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #d32f2f;
+  margin: 8px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 16px rgba(211, 47, 47, 0.18);
+}
+
+ion-item:hover {
+  --background: #ffdada;
+  --color: #b71c1c;
+  transform: translateX(6px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.28);
+}
+
+ion-item ion-icon {
+  font-size: 1.7rem;
+  margin-right: 14px;
+}
+
+ion-menu {
+  --width: 280px;
+  --box-shadow: 8px 0 25px rgba(0, 0, 0, 0.22);
+}
+
+ion-menu::part(backdrop) {
+  transition: background 0.3s ease;
+  background: rgba(0, 0, 0, 0.25);
+}

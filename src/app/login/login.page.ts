@@ -26,10 +26,10 @@ export class LoginPage {
         localStorage.setItem('loggedIn', 'true');
         this.router.navigateByUrl('/home');
       } else {
-        this.errorMessage = 'Credenciales incorrectas';
+        this.errorMessage = 'Credenciales incorrectas.';
       }
     } else {
-      this.errorMessage = 'No hay usuarios registrados';
+      this.errorMessage = 'No hay usuarios registrados.';
     }
   }
 }

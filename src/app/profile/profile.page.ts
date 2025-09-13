@@ -21,6 +21,7 @@ export class ProfilePage {
     name: '',
     email: '',
     phone: '',
+    address: '',
     medicalData: ''
   };
 

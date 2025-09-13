@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ToastController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -16,24 +16,37 @@ export class RegisterPage {
   email = '';
   password = '';
   phone = '';
+  address = '';
   medicalData = '';
 
-  constructor(private router: Router) {}
+  emergencyContacts = [
+    { name: 'Contacto Emergencia 1', phone: '0987654321' },
+  ];
 
-  register() {
+  constructor(private router: Router, private toastCtrl: ToastController) {}
+
+  async register() {
     // Guardar usuario en localStorage (demo)
     const user = {
       name: this.name,
       email: this.email,
       password: this.password,
       phone: this.phone,
+      address: this.address,
       medicalData: this.medicalData
     };
 
     localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('emergencyContacts', JSON.stringify(this.emergencyContacts));
     localStorage.setItem('loggedIn', 'true');
 
-    alert('Registro exitoso (demo)');
+    const toast = await this.toastCtrl.create({
+      message: 'Usuario de prueba creado y registrado.',
+      duration: 2000,
+      position: 'bottom',
+    });
+    await toast.present();
+
     this.router.navigate(['/home']);
   }
 }

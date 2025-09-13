@@ -12,22 +12,27 @@
   <div class="form-container">
     <h2>Datos del Usuario</h2>
 
-    <ion-item>
+    <ion-item lines="full" class="input-item">
       <ion-label position="floating">Nombre</ion-label>
       <ion-input [(ngModel)]="user.name"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="full" class="input-item">
       <ion-label position="floating">Email</ion-label>
       <ion-input [(ngModel)]="user.email" type="email"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="full" class="input-item">
       <ion-label position="floating">Teléfono</ion-label>
       <ion-input [(ngModel)]="user.phone" type="tel"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item lines="full" class="input-item">
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="user.address"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full" class="input-item">
       <ion-label position="floating">Datos Médicos</ion-label>
       <ion-input [(ngModel)]="user.medicalData"></ion-input>
     </ion-item>
@@ -35,12 +40,12 @@
     <h2>Contactos de Emergencia</h2>
 
     <div *ngFor="let contact of emergencyContacts; let i = index">
-      <ion-item>
+      <ion-item lines="full" class="input-item">
         <ion-label position="floating">Nombre</ion-label>
         <ion-input [(ngModel)]="contact.name"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item lines="full" class="input-item">
         <ion-label position="floating">Teléfono</ion-label>
         <ion-input [(ngModel)]="contact.phone" type="tel"></ion-input>
       </ion-item>

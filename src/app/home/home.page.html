@@ -12,7 +12,18 @@
     <h2 class="title">Emergencia</h2>
     <p class="subtitle">Presiona el botón si necesitas ayuda.</p>
 
+    <ion-button class="location-btn" expand="block" fill="outline" (click)="getLocation()">
+      <ion-icon name="location" slot="start"></ion-icon>
+      Obtener Ubicación
+    </ion-button>
+
+    <p *ngIf="currentLocation" class="location-info">
+      <ion-icon name="pin"></ion-icon>
+      {{ currentLocation }}
+    </p>
+
     <ion-button class="emergency-btn" expand="block" (click)="sendEmergency()">
+      <ion-icon name="warning" slot="start"></ion-icon>
       Solicitar Ayuda
     </ion-button>
   </div>

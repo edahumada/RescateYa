@@ -26,6 +26,7 @@ export class ProfilePage {
   };
 
   emergencyContacts: EmergencyContact[] = [];
+  successMessage: string = '';
 
   constructor(private menuCtrl: MenuController, private router: Router) {
     this.loadProfile();
@@ -46,7 +47,7 @@ export class ProfilePage {
   saveProfile() {
     localStorage.setItem('user', JSON.stringify(this.user));
     localStorage.setItem('emergencyContacts', JSON.stringify(this.emergencyContacts));
-    alert('Perfil actualizado');
+    this.successMessage = 'Perfil actualizado';
   }
 
   addContact() {

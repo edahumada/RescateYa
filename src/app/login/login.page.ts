@@ -14,6 +14,7 @@ import { Router, RouterModule } from '@angular/router';
 export class LoginPage {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
   constructor(private router: Router) {}
 
@@ -25,10 +26,10 @@ export class LoginPage {
         localStorage.setItem('loggedIn', 'true');
         this.router.navigateByUrl('/home');
       } else {
-        alert('Credenciales incorrectas');
+        this.errorMessage = 'Credenciales incorrectas';
       }
     } else {
-      alert('No hay usuarios registrados');
+      this.errorMessage = 'No hay usuarios registrados';
     }
   }
 }

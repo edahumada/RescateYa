@@ -26,6 +26,8 @@
       Entrar
     </ion-button>
 
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
     <ion-button expand="block" fill="clear" routerLink="/register">
       Crear cuenta
     </ion-button>

@@ -14,36 +14,38 @@
 
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input [(ngModel)]="name"></ion-input>
+      <ion-input [(ngModel)]="name" placeholder="Ingrese su nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" type="email"></ion-input>
+      <ion-input [(ngModel)]="email" type="email" placeholder="Ingrese su email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="password" type="password"></ion-input>
+      <ion-input [(ngModel)]="password" type="password" placeholder="Ingrese su contraseña"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input [(ngModel)]="phone" type="tel"></ion-input>
+      <ion-input [(ngModel)]="phone" type="tel" placeholder="Ingrese su teléfono"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Dirección</ion-label>
-      <ion-input [(ngModel)]="address"></ion-input>
+      <ion-input [(ngModel)]="address" placeholder="Ingrese su dirección"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Datos Médicos</ion-label>
-      <ion-input [(ngModel)]="medicalData"></ion-input>
+      <ion-input [(ngModel)]="medicalData" placeholder="Ingrese sus datos médicos"></ion-input>
     </ion-item>
 
     <ion-button expand="block" color="primary" (click)="register()">
       Registrarse
     </ion-button>
+
+    <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
   </div>
 </ion-content>

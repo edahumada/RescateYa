@@ -24,6 +24,7 @@ export class HomePage {
     private geolocationService: GeolocationService
   ) {}
 
+  
   async sendEmergency() {
     const storedContacts = localStorage.getItem('emergencyContacts');
     let emergencyContacts: EmergencyContact[] = [];

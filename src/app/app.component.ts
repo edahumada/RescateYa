@@ -26,4 +26,8 @@ export class AppComponent {
     await this.router.navigate(['/login']);
     this.menuCtrl.close('main-menu');
   }
+
+  openGoogleDoc() {
+    window.open('https://docs.google.com/document/d/1KQMwzkAdlrMgBLNoKUvXo4YmRsm8f3Ps2RKN6BXt3fs/edit?usp=sharing', '_blank');
+  }
 }

@@ -1,0 +1,500 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+// ===== VARIABLES GLOBALES =====
+:root {
+  // Colores principales para RescateYa
+   --ion-color-primary: #E53935;
+  --ion-color-primary-rgb: 229, 57, 53;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #ca3231;
+  --ion-color-primary-tint: #e84d49;
+
+  --ion-color-secondary: #424242;
+  --ion-color-secondary-rgb: 66, 66, 66;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #3a3a3a;
+  --ion-color-secondary-tint: #555555;
+
+  --ion-color-tertiary: #F5F5F5;
+  --ion-color-tertiary-rgb: 245, 245, 245;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #d8d8d8;
+  --ion-color-tertiary-tint: #f6f6f6;
+
+  --ion-color-success: #2dd36f;
+  --ion-color-warning: #ffc409;
+  --ion-color-danger: #B71C1C;
+  --ion-color-dark: #212121;
+  --ion-color-medium: #9E9E9E;
+  --ion-color-light: #F5F5F5;
+
+
+  // Variables de diseño
+  --border-radius: 12px;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --rescateya-border-radius: 12px;
+  --rescateya-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --rescateya-menu-border: 4px solid transparent;
+  --transition-speed: 0.3s ease;
+}
+
+// ===== ESTILOS GLOBALES MEJORADOS =====
+
+// Variables globales mejoradas
+:root {
+  --rescateya-border-radius: 12px;
+  --rescateya-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --rescateya-menu-border: 4px solid transparent;
+  --transition-speed: 0.3s ease;
+}
+
+// Reset y base mejorados
+* {
+  box-sizing: border-box;
+}
+
+// Tipografía y contenido
+ion-content {
+  --background: var(--ion-color-tertiary);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+// Headers mejorados
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    --border-width: 0;
+    
+    ion-title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// Sistema de botones mejorado
+.btn-emergency {
+  --background: var(--ion-color-danger);
+  --background-activated: #8b0000;
+  --background-hover: #a83232;
+  --color: white;
+  --border-radius: 50px;
+  font-weight: bold;
+  height: 60px;
+  font-size: 1.1rem;
+  margin: 20px 0;
+  --box-shadow: 0 4px 8px rgba(181, 28, 28, 0.3);
+  transition: all var(--transition-speed);
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Botones base mejorados
+ion-button {
+  --border-radius: var(--rescateya-border-radius);
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  text-transform: none;
+  height: 50px;
+  transition: all var(--transition-speed);
+  
+  &:disabled {
+    opacity: 0.6;
+    transform: none;
+  }
+}
+
+// Sistema de tarjetas mejorado
+ion-card {
+  border-radius: var(--rescateya-border-radius);
+  box-shadow: var(--rescateya-card-shadow);
+  margin: 16px;
+  transition: transform var(--transition-speed);
+  
+  &:active {
+    transform: translateY(2px);
+  }
+  
+  ion-card-header {
+    padding-bottom: 0;
+    
+    ion-card-title {
+      color: var(--ion-color-primary);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    
+    ion-card-subtitle {
+      color: var(--ion-color-secondary);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  }
+  
+  ion-card-content {
+    padding: 20px;
+  }
+}
+
+// Menú lateral mejorado
+ion-menu {
+  .menu-header {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    text-align: center;
+    padding: 25px 0 20px;
+    
+    .avatar {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 10px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      transition: transform var(--transition-speed);
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    
+    ion-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+  }
+  
+  .menu-content {
+    --background: var(--ion-color-tertiary);
+    
+    ion-list {
+      background: transparent;
+      padding: 10px 0;
+    }
+    
+    ion-item {
+      --background: transparent;
+      --color: var(--ion-color-secondary);
+      --padding-start: 20px;
+      --padding-end: 20px;
+      --min-height: 56px;
+      margin-bottom: 5px;
+      border-left: var(--rescateya-menu-border);
+      transition: all var(--transition-speed);
+      
+      ion-icon {
+        color: var(--ion-color-primary);
+        margin-right: 16px;
+        font-size: 1.3rem;
+        transition: color var(--transition-speed);
+      }
+      
+      &:hover {
+        --background: rgba(229, 57, 53, 0.08);
+      }
+      
+      &.activated {
+        --background: rgba(229, 57, 53, 0.15);
+        --color: var(--ion-color-primary);
+        border-left-color: var(--ion-color-primary);
+        font-weight: 600;
+        
+        ion-icon {
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+}
+
+// Formularios mejorados
+ion-item {
+  --border-radius: var(--rescateya-border-radius);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 56px;
+  margin-bottom: 16px;
+  --background: white;
+  transition: all var(--transition-speed);
+  
+  ion-label {
+    color: var(--ion-color-secondary);
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: color var(--transition-speed);
+  }
+  
+  &.item-has-focus {
+    --border-color: var(--ion-color-primary);
+    --box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.1);
+    
+    ion-label {
+      color: var(--ion-color-primary);
+    }
+  }
+}
+
+// Utilidades de diseño
+.home-container {
+  text-align: center;
+  padding: 20px;
+  
+  .welcome-section {
+    margin-bottom: 30px;
+    
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+      border: 3px solid var(--ion-color-primary);
+      border-radius: 50%;
+      transition: transform var(--transition-speed);
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    
+    h2 {
+      color: var(--ion-color-secondary);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    
+    p {
+      color: var(--ion-color-medium);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+  
+  .emergency-button-container {
+    margin: 30px 0;
+  }
+  
+  .quick-actions {
+    margin-top: 30px;
+    
+    h2 {
+      color: var(--ion-color-secondary);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Footer de emergencia mejorado
+.emergency-footer {
+  background: var(--ion-color-danger);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  ion-button {
+    --background: white;
+    --color: var(--ion-color-danger);
+    --background-activated: #f0f0f0;
+    margin-top: 10px;
+    font-weight: 700;
+    --border-radius: var(--rescateya-border-radius);
+  }
+}
+
+// Menú footer mejorado
+.menu-footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--ion-color-light);
+  background: var(--ion-color-tertiary);
+  
+  ion-note {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--ion-color-medium);
+    font-size: 0.9rem;
+  }
+  
+  ion-button {
+    --border-radius: var(--rescateya-border-radius);
+  }
+}
+
+// Item de logout mejorado
+.logout-item {
+  --color: var(--ion-color-danger);
+  border-left: 4px solid transparent;
+  
+  ion-icon {
+    color: var(--ion-color-danger) !important;
+    transition: color var(--transition-speed);
+  }
+  
+  &.activated {
+    --color: var(--ion-color-danger);
+    --background: rgba(183, 28, 28, 0.15);
+    border-left-color: var(--ion-color-danger);
+    
+    ion-icon {
+      color: var(--ion-color-danger) !important;
+    }
+  }
+}
+
+// Utilidades de accesibilidad
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.high-contrast {
+  --ion-color-primary: #000000;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-border-color: #000000;
+  
+  ion-content {
+    --background: #000000;
+    --color: #FFFFFF;
+  }
+  
+  ion-item {
+    --background: #000000;
+    --color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+  }
+}
+
+// Estados de carga y disabled
+.is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+// Responsive improvements
+@media (max-width: 768px) {
+  ion-card {
+    margin: 12px;
+  }
+  
+  .home-container {
+    padding: 15px;
+  }
+  
+  .emergency-footer {
+    padding: 12px;
+    
+    ion-button {
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  ion-header {
+    ion-toolbar {
+      ion-title {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .btn-emergency {
+    height: 55px;
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+  
+  ion-button {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}
+
+// Mejoras de focus para accesibilidad
+button:focus-visible,
+ion-button:focus-visible,
+ion-item:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}
+
+// Scroll personalizado
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ion-color-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ion-color-medium);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ion-color-primary);
+}

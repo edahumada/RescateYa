@@ -1,42 +1,341 @@
-ion-content {
-  --background: #f5f7fa;
-  padding: 20px;
+// profile.page.scss - Estilos corregidos
+
+.profile-content {
+  --background: #fafafa;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  
+  &.high-contrast {
+    --background: #000000;
+    
+    .profile-card,
+    .emergency-contacts-card {
+      --background: #000000;
+      border: 2px solid #ffffff;
+      
+      ion-card-header {
+        --background: #333333;
+      }
+    }
+    
+    .input-item {
+      --background: #000000;
+      --color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+  }
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
+.profile-container {
+  max-width: 600px;
   margin: 0 auto;
-  gap: 15px;
 }
 
-h2, h3 {
-  color: #d32f2f;
+.profile-header {
   text-align: center;
+  margin: 20px 0 30px;
+  
+  .user-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background: var(--ion-color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    ion-icon {
+      font-size: 60px;
+      color: white;
+    }
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    color: var(--ion-color-medium);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+  }
 }
 
-ion-item {
-  --background: #ffffff;
-  border-radius: 8px;
+.profile-card,
+.emergency-contacts-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+  
+  ion-card-header {
+    background: var(--ion-color-light);
+    padding: 20px;
+    
+    ion-card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ion-color-primary);
+      display: flex;
+      align-items: center;
+      margin: 0;
+      
+      ion-icon {
+        margin-right: 12px;
+        font-size: 1.4rem;
+        color: var(--ion-color-primary);
+      }
+    }
+    
+    ion-card-subtitle {
+      color: var(--ion-color-medium);
+      font-size: 0.9rem;
+      margin: 8px 0 0 0;
+    }
+  }
+  
+  ion-card-content {
+    padding: 20px;
+  }
 }
 
-ion-label {
-  color: #333333;
+.form-group {
+  margin-bottom: 20px;
+  
+  .input-item {
+    --background: #f8f9fa;
+    --border-radius: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --inner-padding-end: 16px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    
+    ion-icon {
+      font-size: 1.2rem;
+      color: var(--ion-color-medium);
+      margin-right: 12px;
+    }
+    
+    ion-label {
+      color: var(--ion-color-dark);
+      font-weight: 500;
+    }
+    
+    ion-input, ion-textarea {
+      --padding-start: 0;
+      --padding-end: 0;
+    }
+  }
+  
+  ion-note {
+    color: var(--ion-color-medium);
+    font-size: 0.8rem;
+    margin-top: 8px;
+    display: block;
+    font-style: italic;
+  }
 }
 
-ion-input {
-  color: #000000;
-}
-
-ion-button {
+.contact-item {
+  background: #f8f9fa;
   border-radius: 12px;
-  margin-top: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+  
+  .contact-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    
+    ion-icon {
+      font-size: 1.8rem;
+      color: var(--ion-color-primary);
+      margin-right: 12px;
+    }
+    
+    h3 {
+      flex: 1;
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ion-color-dark);
+    }
+    
+    .delete-btn {
+      --padding-start: 8px;
+      --padding-end: 8px;
+      --color: var(--ion-color-danger);
+      
+      ion-icon {
+        font-size: 1.4rem;
+        color: var(--ion-color-danger);
+        margin: 0;
+      }
+    }
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ion-color-medium);
+  
+  ion-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    color: var(--ion-color-medium);
+  }
+  
+  p {
+    margin: 8px 0;
+    font-size: 1rem;
+    
+    &.subtitle {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.add-contact-btn {
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  margin: 16px 0;
+  font-weight: 600;
+  
+  ion-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+.actions-section {
+  margin: 32px 0;
+}
+
+.save-btn {
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  margin: 16px 0;
+  font-weight: 600;
+  
+  ion-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+.logout-btn {
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  margin: 8px 0;
+  font-weight: 600;
+  
+  ion-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
 }
 
 .success-message {
-  color: black;
-  font-weight: bold;
-  margin-top: 10px;
+  background: #e8f5e8;
+  color: var(--ion-color-success);
+  padding: 16px;
+  border-radius: 12px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  border-left: 4px solid var(--ion-color-success);
+  
+  ion-icon {
+    margin-right: 12px;
+    font-size: 1.4rem;
+  }
+}
+
+// Responsive
+@media (max-width: 480px) {
+  .profile-content {
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+  
+  .profile-header {
+    margin: 16px 0 24px;
+    
+    .user-avatar {
+      width: 80px;
+      height: 80px;
+      
+      ion-icon {
+        font-size: 48px;
+      }
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .profile-card,
+  .emergency-contacts-card {
+    ion-card-header {
+      padding: 16px;
+    }
+    
+    ion-card-content {
+      padding: 16px;
+    }
+  }
+  
+  .contact-item {
+    padding: 16px;
+  }
+}
+
+// Mejoras de accesibilidad
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// Estados de focus para accesibilidad
+ion-button:focus-visible,
+ion-item:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+}
+
+// Asegurar que los colores de Ionic se apliquen
+ion-icon {
+  &[color='primary'] {
+    color: var(--ion-color-primary);
+  }
+  
+  &[color='danger'] {
+    color: var(--ion-color-danger);
+  }
+  
+  &[color='medium'] {
+    color: var(--ion-color-medium);
+  }
+  
+  &[color='success'] {
+    color: var(--ion-color-success);
+  }
 }

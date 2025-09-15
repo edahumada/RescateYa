@@ -1,9 +1,15 @@
 <ion-app>
-  <ion-menu side="start" menuId="main-menu" contentId="main-content" swipeGesture="true">
+  <!-- Menú lateral -->
+  <ion-menu
+    side="start"
+    menuId="main-menu"
+    contentId="main-content"
+    swipeGesture="true"
+  >
     <ion-header>
       <ion-toolbar class="menu-header">
         <ion-avatar class="avatar">
-          <img src="assets/RescateYa.png" alt="avatar">
+          <img src="assets/RescateYa.png" alt="avatar" />
         </ion-avatar>
         <ion-title>RescateYa</ion-title>
       </ion-toolbar>
@@ -11,39 +17,44 @@
 
     <ion-content class="menu-content">
       <ion-list lines="none">
-        <ion-item button (click)="navigateTo('/home')">
-          <ion-icon name="home-outline" slot="start"></ion-icon>
-          Home
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item button (click)="navigateTo('/home')">
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            Home
+          </ion-item>
+        </ion-menu-toggle>
 
-        <ion-item button (click)="navigateTo('/profile')">
-          <ion-icon name="person-outline" slot="start"></ion-icon>
-          Perfil
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item button (click)="navigateTo('/profile')">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            Perfil
+          </ion-item>
+        </ion-menu-toggle>
 
-        <ion-item button (click)="navigateTo('/register')">
-          <ion-icon name="create-outline" slot="start"></ion-icon>
-          Registro
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item button (click)="navigateTo('/register')">
+            <ion-icon name="create-outline" slot="start"></ion-icon>
+            Registro
+          </ion-item>
+        </ion-menu-toggle>
 
-        <ion-item button (click)="logout()">
-          <ion-icon name="log-out-outline" slot="start"></ion-icon>
-          Cerrar sesión
-        </ion-item>
-        
-        <ion-item button (click)="openGoogleDoc()">
-          <ion-icon name="document-outline" slot="start"></ion-icon>
-          Guia de Emergencias
-        </ion-item>
+        <ion-menu-toggle>
+          <ion-item button (click)="logout()">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            Cerrar sesión
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item button (click)="openGoogleDoc()">
+            <ion-icon name="document-outline" slot="start"></ion-icon>
+            Guia de Emergencias
+          </ion-item>
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
 
-        
-
+  <!-- Contenido principal -->
   <ion-router-outlet id="main-content"></ion-router-outlet>
-
-  <button type="button" (click)="openGoogleDoc()">
-    Guia de Emergencias
-  </button>
 </ion-app>

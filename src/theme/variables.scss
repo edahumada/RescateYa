@@ -1,2 +1,35 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// variables.scss - SOLO variables (sin cambios en el contenido)
+:root {
+  // Colores principales para RescateYa
+  --ion-color-primary: #E53935;
+  --ion-color-primary-rgb: 229, 57, 53;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #ca3231;
+  --ion-color-primary-tint: #e84d49;
+
+  --ion-color-secondary: #424242;
+  --ion-color-secondary-rgb: 66, 66, 66;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #3a3a3a;
+  --ion-color-secondary-tint: #555555;
+
+  --ion-color-tertiary: #F5F5F5;
+  --ion-color-tertiary-rgb: 245, 245, 245;
+  --ion-color-tertiary-contrast: #000000;
+  --ion-color-tertiary-contrast-rgb: 0, 0, 0;
+  --ion-color-tertiary-shade: #d8d8d8;
+  --ion-color-tertiary-tint: #f6f6f6;
+
+  --ion-color-success: #2dd36f;
+  --ion-color-warning: #ffc409;
+  --ion-color-danger: #B71C1C;
+  --ion-color-dark: #222428;
+  --ion-color-medium: #92949c;
+  --ion-color-light: #f4f5f8;
+
+  // Variables de diseño
+  --border-radius: 12px;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

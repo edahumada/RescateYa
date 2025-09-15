@@ -1,35 +1,108 @@
 <ion-header>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title>RescateYa</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleAccessibility()" color="light">
+        <ion-icon name="accessibility-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-  <ion-content class="ion-padding">
+<ion-content class="login-content" [class.high-contrast]="highContrastMode">
+  <div class="login-container">
+    <!-- Logo y bienvenida -->
+    <div class="welcome-section">
+      <div class="logo-container">
+        <ion-icon name="shield-checkmark" color="primary"></ion-icon>
+      </div>
+      <h1>Bienvenido</h1>
+      <p class="subtitle">Ingresa a tu cuenta para acceder a ayuda inmediata</p>
+    </div>
 
-    <div class="form-container">
-      <h2>Accede a tu cuenta</h2>
+    <!-- Formulario de login -->
+    <div class="form-card">
+      <h2>Iniciar Sesión</h2>
+      
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-icon name="mail-outline" slot="start" color="medium"></ion-icon>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input 
+            [(ngModel)]="email" 
+            type="email" 
+            inputmode="email"
+            autocomplete="email"
+            placeholder="tu@email.com"
+            aria-label="Correo electrónico">
+          </ion-input>
+        </ion-item>
+      </div>
 
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input [(ngModel)]="email" type="email"></ion-input>
-      </ion-item>
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-icon name="lock-closed-outline" slot="start" color="medium"></ion-icon>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input 
+            [(ngModel)]="password" 
+            type="password" 
+            autocomplete="current-password"
+            placeholder="Ingresa tu contraseña"
+            aria-label="Contraseña">
+          </ion-input>
+        </ion-item>
+        
+        <ion-button fill="clear" size="small" class="forgot-password">
+          ¿Olvidaste tu contraseña?
+        </ion-button>
+      </div>
 
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-      </ion-item>
+      <!-- Mensaje de error -->
+      <div *ngIf="errorMessage" class="error-message" role="alert">
+        <ion-icon name="warning-outline"></ion-icon>
+        {{ errorMessage }}
+      </div>
 
-      <ion-button expand="block" color="primary" (click)="login()">
-        Entrar
+      <!-- Botón de login -->
+      <ion-button 
+        expand="block" 
+        color="primary" 
+        (click)="login()" 
+        class="login-button"
+        [disabled]="!email || !password">
+        <ion-icon name="log-in-outline" slot="start"></ion-icon>
+        Ingresar
       </ion-button>
 
-      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <!-- Separador -->
+      <div class="separator">
+        <span>o</span>
+      </div>
 
-      <ion-button expand="block" fill="clear" routerLink="/register">
-        Crear cuenta
+      <!-- Registro -->
+      <div class="register-section">
+        <p>¿No tienes una cuenta?</p>
+        <ion-button 
+          expand="block" 
+          fill="outline" 
+          color="medium" 
+          routerLink="/register"
+          class="register-button">
+          <ion-icon name="person-add-outline" slot="start"></ion-icon>
+          Crear cuenta
+        </ion-button>
+      </div>
+    </div>
+
+    <!-- Información de emergencia -->
+    <div class="emergency-info">
+      <ion-button fill="clear" color="danger" (click)="showEmergencyInfo()">
+        <ion-icon name="alert-circle-outline" slot="start"></ion-icon>
+        ¿Necesitas ayuda urgente?
       </ion-button>
     </div>
-  </ion-content>
+  </div>
+</ion-content>

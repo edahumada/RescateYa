@@ -1,46 +1,221 @@
-ion-content {
-  --background: #f5f7fa;
-  padding: 20px;
+
+
+// login.page.scss - Estilos específicos para la página de login
+
+// login.page.scss - SOLO ESTILOS, SIN IMPORTS
+
+/* Estilos específicos para login */
+.login-content {
+  --background: linear-gradient(180deg, var(--ion-color-light) 0%, #ffffff 100%);
+  
+  &.high-contrast {
+    --background: #000000;
+    
+    .form-card {
+      --background: #000000;
+      border: 2px solid #ffffff;
+    }
+  }
 }
 
-.form-container {
+.login-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  max-width: 400px;
+  min-height: 100%;
+  padding: 20px;
+  max-width: 500px;
   margin: 0 auto;
-  gap: 15px;
 }
 
-h2, h3 {
-  color: #d32f2f;
+.welcome-section {
   text-align: center;
+  margin: 40px 0 30px;
+  
+  .logo-container {
+    margin-bottom: 20px;
+    
+    ion-icon {
+      font-size: 64px;
+      background: var(--ion-color-primary);
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+    }
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ion-color-dark);
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    color: var(--ion-color-medium);
+    font-size: 1rem;
+    margin: 0;
+  }
 }
 
-ion-item {
-  --background: #ffffff;
-  border-radius: 8px;
-}
-
-ion-label {
-  color: #333333 !important;
-  z-index: 10;
-}
-
-ion-input {
-  color: #000000;
-}
-
-ion-button {
+.form-card {
+  background: white;
   border-radius: 12px;
-  margin-top: 10px;
-  --background: #d32f2f;
-  --background-activated: #b71c1c;
-  color: white;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  
+  h2 {
+    text-align: center;
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ion-color-dark);
+  }
 }
 
-.error-message, .success-message {
-  color: black;
-  font-weight: bold;
-  margin-top: 10px;
+.form-group {
+  margin-bottom: 20px;
+  
+  .input-item {
+    --background: #f8f9fa;
+    --border-radius: 12px;
+    --padding-start: 12px;
+    --inner-padding-end: 12px;
+    margin-bottom: 10px;
+    
+    ion-icon {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .forgot-password {
+    --color: var(--ion-color-medium);
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+    height: auto;
+  }
+}
+
+.error-message {
+  background: #ffebee;
+  color: var(--ion-color-danger);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  
+  ion-icon {
+    margin-right: 8px;
+  }
+}
+
+.login-button {
+  margin: 10px 0 20px;
+  height: 50px;
+  font-weight: 600;
+  
+  &:disabled {
+    --background: var(--ion-color-medium);
+    --background-hover: var(--ion-color-medium);
+    --background-activated: var(--ion-color-medium);
+  }
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: var(--ion-color-medium);
+  
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--ion-color-light);
+  }
+  
+  span {
+    padding: 0 15px;
+    font-size: 0.9rem;
+  }
+}
+
+.register-section {
+  text-align: center;
+  
+  p {
+    color: var(--ion-color-medium);
+    margin-bottom: 15px;
+  }
+  
+  .register-button {
+    height: 45px;
+  }
+}
+
+.emergency-info {
+  text-align: center;
+  margin-top: auto;
+  padding: 20px 0;
+  
+  ion-button {
+    font-weight: 500;
+    
+    ion-icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Mejoras de accesibilidad
+@media (prefers-reduced-motion: reduce) {
+  .login-content {
+    * {
+      transition: none;
+      animation: none;
+    }
+  }
+}
+
+// Modo alto contraste
+.login-content.high-contrast {
+  .welcome-section,
+  .form-card,
+  .emergency-info {
+    filter: contrast(140%);
+  }
+  
+  .input-item {
+    --background: #000000;
+    --color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+}
+
+// Responsive para móviles más pequeños
+@media (max-width: 360px) {
+  .login-container {
+    padding: 15px;
+  }
+  
+  .welcome-section {
+    margin: 20px 0;
+    
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  
+  .form-card {
+    padding: 20px;
+  }
+  
+  .welcome-section .logo-container ion-icon {
+    font-size: 54px;
+    padding: 12px;
+  }
 }
